@@ -245,6 +245,10 @@ html {
     font-family: "Lato", sans-serif;
 }
 
+.content-section img {
+    display: none;
+}
+
 /* Horizontal Line Style */
 .content-text hr {
     border: none;
@@ -365,10 +369,6 @@ html {
     cursor: pointer;
     margin-top: 10px;
     border-radius: 100px;
-}
-
-.get-quote form {
-    
 }
 
 /* Footer */
@@ -526,6 +526,7 @@ html {
     }
 
     .content-section img {
+        display: flex;
         max-width: 100%;
         height: auto;
         border-radius: 10px; /* Optional: adds a subtle curve to the image */
