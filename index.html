@@ -46,12 +46,12 @@
         </nav>
         <button class="menu-btn">&#9776;</button> <!-- Hamburger menu for mobile -->
         <!-- Mobile Menu -->
-        <nav class="mobile-nav">
-            <button class="close-btn">&times;</button>
+        <nav class="mobile-nav" id="mobileNav">
+            <button class="close-btn" id="closeMenu">&times;</button>
             <ul>
-                <li><a href="#our-work">Our Work</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#our-work" class="mobile-nav-link">Our Work</a></li>
+                <li><a href="#testimonials" class="mobile-nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
             </ul>
         </nav>
         <script>
@@ -103,7 +103,7 @@
 
     <section id="our-work" class="our-work-section">  
         <div>
-            <h2>Examples of Our Work</h1>
+            <h2>Examples of Our Work</h2>
             <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
             <div class="elfsight-app-5d08d64a-c3ba-4044-b6cb-f079ff29ff93" data-elfsight-app-lazy></div> 
         </div>
@@ -112,6 +112,11 @@
     <!-- Testimonials -->
 
     <section id="testimonials" class="testimonials-section">
+        <div>
+            <h2>Customers Love Our Works<br/> Read for yourself</h2>
+            <script type="text/javascript"> (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=!0, e.src="//staticw2.yotpo.com/kPuRbw6Uo4fVEVNUktRkNhHJj7NfsWERvDxDNnq4/widget.js";var t=document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e,t)})(); </script>
+            <div id='yotpo-testimonials-custom-tab'></div>
+        </div>
     </section>
 
     <!-- Form Section -->
@@ -197,6 +202,31 @@
 
     closeBtn.addEventListener('click', () => {
         mobileNav.style.transform = 'translateX(-100%)';
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.querySelector('.menu-btn');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const closeBtn = document.querySelector('.close-btn');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a'); // Select all links in the mobile nav
+
+        // Open menu
+        menuBtn.addEventListener('click', () => {
+            mobileNav.style.transform = 'translateX(0)';
+        });
+
+        // Close menu
+        closeBtn.addEventListener('click', () => {
+            mobileNav.style.transform = 'translateX(-100%)';
+        });
+
+        // Close menu when a link is clicked
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.style.transform = 'translateX(-100%)';
+            });
+        });
     });
 </script>
 </body>
