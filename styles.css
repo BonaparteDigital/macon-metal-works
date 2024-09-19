@@ -1,0 +1,496 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Body and Container Styles */
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+}
+
+h2 {
+    font-size: 50px;
+    font-family: "Cabin", sans-serif;
+}
+
+/* Header */
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Default Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #fff;
+    color: #333;
+    height: 80px; /* Set a specific height for the navbar */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease, padding 0.3s ease; /* Smooth transition */
+}
+
+/* Header when scrolled */
+.header.scrolled {
+    height: 60px; /* Reduced height on scroll */
+    padding: 10px 20px; /* Reduced padding */
+}
+
+/* Header Buttons */
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.call-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #002855;
+    text-decoration: none;
+    border: 1px solid #002855;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.header-cta-btn {
+    background-color: #4A85E2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Cabin", sans-serif;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 250px;
+    height: auto;
+}
+
+.logo span {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    display: none; /* Fallback text */
+}
+
+/* Navigation Links */
+.desktop-nav {
+    display: none; /* Hidden by default, shown on larger screens */
+}
+
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.desktop-nav a {
+    color: #002855;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    text-align: left;
+    gap: 30px; /* Add space between items */
+}
+
+.mobile-nav li {
+    padding: 20px 0; /* Additional padding to control spacing */
+}
+
+.mobile-nav a {
+    font-size: 50px;
+    color: #002855;
+    text-decoration: none;
+    margin: 30px 0;
+    font-family: "Permanent Marker", cursive;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 30px;
+    display: block; /* Shown on mobile */
+}
+
+/* Close Button for Mobile Nav */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 36px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: #000;
+    height: calc(100vh - 80px); /* Full viewport height minus the navbar height */
+    overflow: hidden; /* Ensure content stays within bounds */
+    transition: height 0.3s ease; /* Add transition for height */
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%; /* Make sure the image fills the adjusted height */
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* CTA Button */
+.cta-btn {
+    background-color: #4A85E2;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Cabin", sans-serif;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: #fff;
+}
+
+/* Content Section */
+.content-section {
+    display: grid;
+    gap: 20px;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, #082B60, #67C1FF);
+    color: white;
+}
+
+.content-section h2 {
+    font-size: 30px;
+}
+
+/* Horizontal Line Style */
+.content-text hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right,
+    rgba(139, 208, 255, 1) 0%,
+    rgba(0,0,0,0) 100%);
+    margin: 20px 0; /* Space around the line */
+}
+
+/* Form Section */
+.form-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 40px; /* Space between columns */
+    padding: 40px 60px; /* Adjust padding as needed */
+    align-items: start; /* Align items at the top */
+}
+
+/* Contact Info Section */
+.contact-info {
+    font-family: 'Lato', sans-serif;
+    color: #002855;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-info h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Opening Hours */
+.opening-hours {
+    display: flex;
+    gap: 50px;
+}
+
+.opening-hours div p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Get a Free Quote Form */
+.get-quote h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #002855;
+    font-family: "Cabin", sans-serif;
+}
+
+.get-quote form {
+    display: flex;
+    flex-direction: column;
+}
+
+.get-quote input, .get-quote textarea {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.get-quote button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: #002855; /* Dark blue background */
+    color: #fff;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-around; /* Space between sections */
+    align-items: flex-start; /* Align sections at the top */
+    flex-wrap: wrap; /* Wrap to a new line on small screens */
+    text-align: center;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-section.left h3 {
+    font-family: 'Lato', sans-serif; /* Use Lato for logo text */
+    margin-bottom: 10px;
+}
+
+.footer-section.left p {
+    font-size: 14px;
+}
+
+.footer-section.center ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section.center ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section.center ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section.right h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section.right .social-icons {
+    margin-bottom: 20px;
+}
+
+.footer-section.right .social-icons a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.footer-section.right .subscription-form {
+    display: flex;
+}
+
+.footer-section.right .subscription-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    flex: 1;
+}
+
+.footer-section.right .subscription-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom hr {
+    border: 0.5px solid #fff;
+    margin-bottom: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    /* Tablet View */
+    .desktop-nav {
+        display: block;
+    }
+
+    .menu-btn,
+    .mobile-nav {
+        display: none;
+    }
+
+    .header-buttons {
+        gap: 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: calc(80vh - 80px); /* Adjust for tablet view */
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    .cta-btn {
+        padding: 12px 30px;
+    }
+
+    /* Content Sections - Two-Column Layout */
+    
+    .content-section {
+        grid-template-columns: 1.5fr 2fr; /* Two columns: image + content */
+    }
+
+    .content-section img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px; /* Optional: adds a subtle curve to the image */
+    }
+
+    .content-section .content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px; /* Adds padding inside the content */
+    }
+
+    /* Form Section - Two Columns */
+    .form-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 40px 60px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 60px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-content {
+        max-width: 30%;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Desktop View */
+    .hero {
+        height: calc(100vh - 80px); /* Full height minus the navbar */
+    }
+
+    .hero-content h1 {
+        font-size: 60px;
+    }
+
+    .cta-btn {
+        padding: 15px 40px;
+    }
+}
