@@ -47,12 +47,9 @@ html {
     padding: 10px 20px; /* Reduced padding */
 }
 
-/* Header Buttons */
 .header-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+    display: none;
+    }
 
 .call-btn {
     display: flex;
@@ -231,6 +228,13 @@ html {
 
 .content-section h2 {
     font-size: 30px;
+    color: #8BD0FF;
+    margin-bottom: 12px;
+}
+
+.content-section p {
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
 }
 
 /* Horizontal Line Style */
@@ -250,30 +254,28 @@ html {
     gap: 40px; /* Space between columns */
     padding: 40px 60px; /* Adjust padding as needed */
     align-items: start; /* Align items at the top */
+    vertical-align: middle;
+    display: table-cell;
 }
 
 /* Contact Info Section */
 .contact-info {
     font-family: 'Lato', sans-serif;
     color: #002855;
+    margin-left: 50px;
+    display: inline-block;
 }
 
 .contact-info h3 {
-    font-size: 24px;
+    font-size: 34px;
     font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.contact-info h4 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .contact-info p {
     font-size: 16px;
     line-height: 1.5;
+    margin-bottom: 20px;
 }
 
 /* Opening Hours */
@@ -289,10 +291,19 @@ html {
 
 /* Get a Free Quote Form */
 .get-quote h2 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #002855;
+    font-size: 50px;
+    font-weight: 700;
+    color: #082B60;
     font-family: "Cabin", sans-serif;
+    text-align: center;
+    margin-bottom: 3    0px;
+}
+
+.get-quote p {
+    font-size: 18px;
+    color: #082B60;
+    font-family: "Cabin", sans-serif;
+    text-align: center;
 }
 
 .get-quote form {
@@ -307,12 +318,13 @@ html {
 }
 
 .get-quote button {
-    background-color: #007bff;
+    background-color: #4A85E2;
     color: #fff;
     border: none;
     padding: 10px;
     cursor: pointer;
     margin-top: 10px;
+    border-radius: 100px;
 }
 
 /* Footer */
@@ -383,7 +395,7 @@ html {
 }
 
 .footer-section.right .subscription-form button {
-    background-color: #007bff;
+    background-color: #4A85E2;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -422,10 +434,13 @@ html {
     .menu-btn,
     .mobile-nav {
         display: none;
-    }
+    }   
 
+    /* Header Buttons */
     .header-buttons {
-        gap: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
     }
 
     /* Hero Section */
@@ -477,20 +492,5 @@ html {
 
     .footer-content {
         max-width: 30%;
-    }
-}
-
-@media (min-width: 1024px) {
-    /* Desktop View */
-    .hero {
-        height: calc(100vh - 80px); /* Full height minus the navbar */
-    }
-
-    .hero-content h1 {
-        font-size: 60px;
-    }
-
-    .cta-btn {
-        padding: 15px 40px;
     }
 }
