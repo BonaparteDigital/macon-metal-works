@@ -11,6 +11,7 @@ body {
     background-color: #f0f0f0;
     color: #333;
     font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
 }
 
 h2 {
@@ -30,7 +31,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px 15px;
     background-color: #fff;
     color: #333;
     height: 80px; /* Set a specific height for the navbar */
@@ -41,31 +42,36 @@ html {
     transition: height 0.3s ease, padding 0.3s ease; /* Smooth transition */
 }
 
-/* Header when scrolled */
-.header.scrolled {
-    height: 60px; /* Reduced height on scroll */
-    padding: 10px 50px; /* Reduced padding */
-}
-
 .header-buttons {
     display: none;
     }
 
 .call-btn {
     display: flex;
+    background-color: #D4EFFF;
     align-items: center;
     gap: 5px;
     color: #002855;
     text-decoration: none;
     border: 1px solid #002855;
-    padding: 8px 15px;
+    padding: 10px 20px;
     border-radius: 20px;
+}
+
+.call-btn:hover {
+    background-color: #4A85E2;
+    color: #fff;
+}
+
+.call-btn:hover img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(237deg) brightness(103%) contrast(101%);
 }
 
 .header-cta-btn {
     background-color: #4A85E2;
     color: #fff;
-    border: none;
+    border-style: solid;
+    border-color:#4A85E2;
     padding: 10px 20px;
     border-radius: 100px;
     cursor: pointer;
@@ -73,20 +79,34 @@ html {
     font-family: "Cabin", sans-serif;
 }
 
-/* Logo */
-.logo {
+.header-cta-btn:hover {
+    background-color: #fff;
+    color: #002855;
+    border-style: solid;
+    border-color:#002855;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Cabin", sans-serif;
+}
+
+/* Logo Header */
+.logo-header {
     display: flex;
     flex-grow: 1;
     justify-content: center;
     align-items: center;
+    padding-top: 4px;
 }
 
-.logo img {
+.logo-header img {
     max-width: 250px;
     height: auto;
+    z-index: 999;
 }
 
-.logo span {
+.logo-header span {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 24px;
@@ -110,23 +130,31 @@ html {
     font-size: 16px;
 }
 
-
+.desktop-nav a:hover {
+    color: #002855;
+    text-decoration: none;
+    border-bottom: 1.5px solid #002855;
+    padding-bottom: 4px;
+    transition: ease, border 0.2s ease; /* Smooth transition */
+    font-size: 16px;
+}
 
 /* Mobile Navigation */
 .mobile-nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: #fff;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
-    z-index: 999;
+    z-index: 998;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 .mobile-nav ul {
@@ -153,7 +181,8 @@ html {
     border: none;
     color: #333;
     font-size: 40px;
-    display: block; /* Shown on mobile */
+    display: block;
+    align-items: center;
 }
 
 /* Close Button for Mobile Nav */
@@ -179,31 +208,48 @@ html {
 
 .hero-image {
     width: 100%;
-    height: 100%; /* Make sure the image fills the adjusted height */
+    height: 100%;
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .hero-content {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     padding: 0 20px;
+    z-index: 2;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,
+    rgba(8, 43, 96, 1) 0%,
+    rgba(8, 43, 96, 0) 100%);
+    z-index: 1;
 }
 
 .hero-content h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-family: "Permanent Marker", cursive;
 }
 
 /* CTA Button */
 .cta-btn {
     background-color: #4A85E2;
     color: #fff;
-    border: none;
+    border-style: solid;
+    border-color:#4A85E2;
     border-radius: 100px;
+    padding: 16px 30px;
     cursor: pointer;
     font-size: 20px;
     font-family: "Cabin", sans-serif;
@@ -212,21 +258,43 @@ html {
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 20px;
+    bottom: 20px;   
     left: 50%;
     transform: translateX(-50%);
-    font-size: 30px;
-    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.line {
+    width: 130px;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0)) 100%;
+}
+
+.arrow {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Content Section */
 .content-section {
     display: grid;
     gap: 20px;
-    padding: 60px 50px;
+    padding: 20px 30px 75px;
     background: linear-gradient(to bottom,
-    rgba(8, 43, 96, 1) 0%,
-    rgba(139, 208, 255, 1) 80%,
+    rgba(8, 43, 96, 1) 30%,
+    rgba(8, 43, 96, 1) 30%,
+    rgba(139, 208, 255, 1) 90%,
     rgba(139, 208, 255, 0) 100%);
     color: white;
     overflow: hidden;
@@ -262,12 +330,22 @@ html {
 /* Gallery Section */
 
 .our-work-section h2 {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     color: #082B60;
     font-family: "Cabin", sans-serif;
     text-align: center;
     margin: 30px;
+}
+
+.elfsight-app-5d08d64a-c3ba-4044-b6cb-f079ff29ff93 {
+    margin: 20px;
+    align-items: center;
+}
+
+.eapp-photo-gallery-photo-gallery-loadMore {
+    border-radius: 100px;
+    font-family: "Cabin", sans-serif;
 }
 
 /* Testimonials Section */
@@ -283,31 +361,118 @@ html {
 }
 
 .testimonials-section h2 {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     color: #082B60;
     font-family: "Cabin", sans-serif;
     text-align: center;
-    margin: 30px;
+    margin: 30px 30px 00px 30px;
+}
+
+.testimonials-section p {
+    font-size: 40px;
+    font-weight: 700;
+    color: #FFF;
+    font-family: "Cabin", sans-serif;
+    text-align: center;
+    margin: 00px 30px 30px 30px;
+}
+
+/* YotPo Reviews Styling */
+
+.reviews-container {
+    display: none;
+    grid-template-columns: 1fr; /* One review per row */
+    grid-gap: 20px;
+    padding: 20px;
+    width: 100%;
+    justify-items: center;
+}
+
+/* Review Card Styling */
+
+.review-card {
+    background-color: #2b4d7f; /* Dark blue background for the card */
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center align the text */
+    word-wrap: break-word; /* Allow long words to wrap */
+}
+
+.review-card h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.review-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.review-card .username {
+    font-size: 14px;
+    font-weight: bold;
+    color: #8bd0ff;
+}
+
+.review-card .stars {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #FFAC33;
+}
+
+/* Swiper Container */
+
+.swiper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures the content is vertically centered */
+    width: 400px;
+    height: 360px;
+    padding: 20px 40px;
+}
+
+.swiper-wrapper {
+    scroll-snap-type: x mandatory;
+}
+
+.swiper-slide {
+    scroll-snap-align: center;
 }
 
 /* Form Section */
+
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Stack items on mobile */
+    gap: 20px;
+}
+
 .form-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 40px; /* Space between columns */
-    padding: 40px 60px; /* Adjust padding as needed */
-    align-items: start; /* Align items at the top */
-    vertical-align: middle;
-    display: table-cell;
+    display: block;
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+}
+.get-quote {
+    order: 1;
+}
+.contact-info {
+    order: 2;
 }
 
 /* Contact Info Section */
 .contact-info {
     font-family: 'Lato', sans-serif;
     color: #002855;
-    margin-left: 50px;
-    display: inline-block;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .contact-info h3 {
@@ -325,7 +490,9 @@ html {
 /* Opening Hours */
 .opening-hours {
     display: flex;
-    gap: 50px;
+    justify-content: center;
+    text-align: left;
+    gap: 50px
 }
 
 .opening-hours div p {
@@ -335,19 +502,20 @@ html {
 
 /* Get a Free Quote Form */
 .get-quote h2 {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     color: #082B60;
     font-family: "Cabin", sans-serif;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }   
 
 .get-quote p {
-    font-size: 18px;
+    font-size: 14px;
     color: #082B60;
     font-family: "Cabin", sans-serif;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .get-quote form {
@@ -356,9 +524,16 @@ html {
 }
 
 .get-quote input, .get-quote textarea {
+    width: 100%; /* Make inputs take full width */
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
+    box-sizing: border-box; /* Include padding in the element's width */
+    margin: 10px 0;
+}
+
+.get-quote textarea {
+    height: 160px;
 }
 
 .get-quote button {
@@ -369,14 +544,44 @@ html {
     cursor: pointer;
     margin-top: 10px;
     border-radius: 100px;
+    font-size: 20px;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox input {
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-upload span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 60px;
 }
 
 /* Footer */
 .footer {
     background-color: #002855; /* Dark blue background */
     color: #fff;
-    padding: 40px 60px;
-    display: flex;
+    padding: 40px 40px;
+    display: block;
     justify-content: space-around; /* Space between sections */
     align-items: flex-start; /* Align sections at the top */
     flex-wrap: wrap; /* Wrap to a new line on small screens */
@@ -388,13 +593,41 @@ html {
     margin: 0 20px;
 }
 
+.footer-section.left {
+    margin-bottom: 30px;
+}
+
 .footer-section.left h3 {
     font-family: 'Lato', sans-serif; /* Use Lato for logo text */
     margin-bottom: 10px;
 }
 
 .footer-section.left p {
-    font-size: 14px;
+    font-size: 16px;
+}
+
+/* Logo Footer */
+.logo-footer {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-footer img {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.logo-footer span {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    display: none; /* Fallback text */
+}
+.footer-section.center {
+    margin-bottom: 30px;
 }
 
 .footer-section.center ul {
@@ -411,19 +644,29 @@ html {
     text-decoration: none;
 }
 
-.footer-section.right h4 {
-    margin-bottom: 10px;
+.footer-section.right h2 {
+    font-family: 'Lato', sans-serif; /* Use Lato for logo text */
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .footer-section.right .social-icons {
+    display: flex;
     margin-bottom: 20px;
+    padding: 0px 50px 0px 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer-section.right .social-icons a {
     color: #fff;
-    margin-right: 10px;
     font-size: 24px;
     text-decoration: none;
+    margin: 10px auto;
+}
+
+.footer-section.right .social-icons img {
+    height: 30px;
 }
 
 .footer-section.right .subscription-form {
@@ -469,8 +712,29 @@ html {
 }
 
 /* Responsive Styles */
-@media (min-width: 768px) {
-    /* Tablet View */
+
+/* Tablet View */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .testimonials-section {
+        height: 900px;
+    }
+    
+    .reviews-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Show 2 reviews in one row */
+        grid-gap: 20px;
+        justify-items: center;
+    }
+
+    .swiper-container {
+        display: none;
+    }
+}
+
+/* Desktop View */
+
+@media (min-width: 1024px) {
     .desktop-nav {
         display: block;
     }
@@ -480,16 +744,29 @@ html {
         display: none;
     }   
 
+    /* Header */
+    .header {
+        padding: 20px 50px;
+    }
+
+    .header.scrolled {
+        height: 60px; /* Reduced height on scroll */
+        padding: 10px 50px; /* Reduced padding */
+    }
+
     /* Header Buttons */
     .header-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo-header img {
+        margin-left: -60px;
     }
 
     .hero {
         position: relative;
-        text-align: center;
         color: #fff;
         background: #000;
         height: calc(100vh - 80px); /* Full viewport height minus the navbar height */
@@ -504,13 +781,23 @@ html {
     }
 
     .hero-content h1 {
-        font-size: 50px;
+        font-size: 90px;
+        text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .line {
+        width: 500px;
+        height: 1px;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0)) 100%;
     }
 
     .cta-btn {
         background-color: #4A85E2;
         color: #fff;
-        border: none;
+        border-style: solid;
+        border-color:#4A85E2;
         border-radius: 100px;
         padding: 16px 30px;
         cursor: pointer;
@@ -519,32 +806,137 @@ html {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
 
+    .cta-btn:hover {
+        background-color: #fff;
+        color: #002855;
+        border-style: solid;
+        border-color:#002855;
+        padding: 16px 30px;
+        border-radius: 100px;
+        cursor: pointer;
+        font-size: 20px;
+        font-family: "Cabin", sans-serif;
+    }
+
     /* Content Sections - Two-Column Layout */
     
     .content-section {
         grid-template-columns: 1.5fr 2fr; /* Two columns: image + content */
+
     }
 
-    .content-section img {
+    .content-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-img img {
         display: flex;
         max-width: 100%;
-        height: auto;
-        border-radius: 10px; /* Optional: adds a subtle curve to the image */
+        border-radius: 10px;
     }
 
     .content-section .content-text {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 20px; /* Adds padding inside the content */
+        padding: 20px;
     }
 
-    /* Form Section - Two Columns */
-    .form-section {
+    .elfsight-app-5d08d64a-c3ba-4044-b6cb-f079ff29ff93 {
+        margin: 60px;
+    }
+
+    /* Reviews Styling */
+
+    .reviews-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        padding: 40px 60px;
+        grid-template-columns: repeat(4, 1fr); /* Show 4 reviews in one row */
+        grid-gap: 20px;
+        justify-items: center;
+    }
+
+    .review-card {
+        width: 300px; /* Fixed width for each card on desktop */
+        height: 300px; /* Optional: Set a fixed height for uniformity */
+    }
+
+    .swiper-container {
+        display: none;
+    }
+
+    /* Form Section */
+
+    .contact-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .get-quote {
+        order: 2;
+        flex: 1;
+    }
+
+    .get-quote {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .get-quote form {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center all form inputs */
+        justify-content: center;
+        width: 100%; /* Set form width */
+        max-width: 500px; /* Set a max width for the form to prevent it from stretching too much */
+    }
+
+    .get-quote button {
+        padding: 10px 30px;
+    }
+
+    .file-upload {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .file-upload span {
+        display: inline-block;
+        width: 80px;
+    }
+
+    .checkbox {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+    }
+
+    .checkbox input {
+        height: 20px;
+        width: 20px;
+        margin-left: 10px;
+    }
+
+    .contact-container {
+        padding-top: 20px;
+    }
+
+    .contact-info {
+        order: 1;
+        flex: 1;
+        padding-top: 50px;
+    }
+
+    /* Opening Hours */
+    .opening-hours {
+        display: flex;
+        gap: 50px;
     }
 
     /* Footer */
@@ -556,5 +948,5 @@ html {
 
     .footer-content {
         max-width: 30%;
-    }
+    } 
 }

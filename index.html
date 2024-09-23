@@ -21,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -30,10 +31,10 @@
     <!-- Header -->
     <header class="header">
         <div class="header-buttons">
-            <a href="tel:+17703121090" class="call-btn"><i class="fas fa-phone"></i> +1 (770) 312-1090</a>
+            <a href="tel:+17703121090" class="call-btn"><img src="assets/call.svg" alt="icon of instagram social media"> +1 (770) 312-1090</a>
             <a href="https://customlakemaps.com/"><button class="header-cta-btn">Shop Now</button></a>
         </div>
-        <div class="logo">
+        <div class="logo-header">
             <img src="assets/logo_black.svg" alt="Macon Metal Works Logo">
             <span>Macon Metal Works</span> <!-- Text fallback -->
         </div>
@@ -70,16 +71,22 @@
     <section class="hero">
         <img src="assets/hero-image.jpg" alt="Lake Keowee Metal Artwork" class="hero-image">
         <div class="hero-content">
-            <h1>Expert Metal Fabrication</h1>
+            <h1>Expert</br>Metal</br>Fabrication</h1>
             <a href="https://customlakemaps.com/"><button class="cta-btn">Shop Now</button></a>
         </div>
-        <div class="scroll-indicator">&#8595;</div> <!-- Scroll down arrow -->
+        <div class="scroll-indicator">
+            <div class="line"></div>
+            <div class="arrow">
+                <img src="/assets/arrow-circle-down.svg" alt="Scroll down arrow">
+            </div>
+            <div class="line"></div>
+        </div>
     </section>
 
     <!-- Content Section -->
     <section class="content-section">
-        <div class="conntent-img">
-            <img src="assets/fire-pit.webp" alt="Fire Pit" loading="lazy">
+        <div class="content-img">
+            <img loading="lazy" src="assets/milly.jpg" alt="Milly Sign" loading="lazy">
         </div>
         <div class="content-text">
             <div>
@@ -113,53 +120,72 @@
 
     <section id="testimonials" class="testimonials-section">
         <div>
-            <h2>Customers Love Our Works<br/> Read for yourself</h2>
-            <script type="text/javascript"> (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=!0, e.src="//staticw2.yotpo.com/kPuRbw6Uo4fVEVNUktRkNhHJj7NfsWERvDxDNnq4/widget.js";var t=document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e,t)})(); </script>
-            <div id='yotpo-testimonials-custom-tab'></div>
+            <h2>Customers Love Our Works</h2>
+            <p>Read for yourself</p>
+            <!-- Desktop/Tablet Container -->
+            <div class="reviews-container">
+                <!-- JavaScript will dynamically insert reviews here for desktop/tablet -->
+            </div>
+            <!-- Mobile Swiper Container (Hidden by default) -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- JavaScript will dynamically insert reviews here for mobile -->
+                </div>
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
     </section>
+    
 
     <!-- Form Section -->
     <section id="contact" class="form-section">
-        <div class="contact-info">
-            <h3>Macon Metal Works</h3>
-            <p>699 Altman Rd.<br>Gray, Georgia, 31204</p>
-            <h3>Call Us</h4>
-            <p>+1 (770) 312-1090</p>
-            <h3>Opening Hours</h4>
-            <div class="opening-hours">
-                <div>
-                    <p>Mon-Thu</p>
-                    <p>Sat</p>
-                    <p>Sun</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Macon Metal Works</h3>
+                <p>699 Altman Rd.<br>Gray, Georgia, 31204</p>
+                <h3>Call Us</h3> <!-- Changed h4 to h3 for consistency -->
+                <p>+1 (770) 312-1090</p>
+                <h3>Opening Hours</h3> <!-- Changed h4 to h3 for consistency -->
+                <div class="opening-hours">
+                    <div>
+                        <p>Mon-Thu</p>
+                        <p>Sat</p>
+                        <p>Sun</p>
+                    </div>
+                    <div>
+                        <p>10am - 4pm</p>
+                        <p>By Appointment</p>
+                        <p>Closed</p>
+                    </div>
                 </div>
-                <div>
-                    <p>10am - 4pm</p>
-                    <p>By Appointment</p>
-                    <p>Closed</p>
-                </div>
+            </div>        
+            <div class="get-quote">
+                <h2>Get a Free Quote</h2>
+                <p>Send us your ideas and we will follow up promptly!</p>
+                <form name="get-a-quote" method="POST" autocomplete="off" enctype="multipart/form-data" data-netlify-recaptcha="true" data-netlify="true">
+                    <input name="name" type="text" placeholder="Your Name">
+                    <input name="email" type="email" placeholder="Your Email">
+                    <input name="phone" type="text" placeholder="Your Phone Number">
+                    <textarea name="message" placeholder="Your Message"></textarea>
+                    <label class="file-upload">
+                        <span>Add file:</span>
+                        <input name="file-upload" name="file" type="file"/>
+                    </label>
+                    <label class="checkbox">
+                        <input name="subscribe" type="checkbox"> Sign up for our email list for updates, promotions, and more.
+                    </label>
+                    <div data-netlify-recaptcha="true"></div>
+                    <button type="submit">Send</button>
+                </form>
             </div>
-        </div>        
-        <div class="get-quote">
-            <h2>Get a Free Quote</h2>
-            <p>Send us your ideas and we will follow up promptly!</p>
-            <form>
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <input type="text" placeholder="Your Phone Number">
-                <textarea placeholder="Your Message"></textarea>
-                <label>
-                    <input type="checkbox"> Sign up for our email list for updates, promotions , and more.
-                </label>
-                <button type="submit">Send</button>
-            </form>
         </div>
     </section>
 
 <!-- Footer -->
     <footer class="footer">
         <div class="footer-section left">
-            <div class="logo">
+            <div class="logo-footer">
                 <img src="assets/logo_white.svg" alt="Macon Metal Works Logo">
                 <span>Macon Metal Works</span> <!-- Text fallback -->
             </div>
@@ -174,16 +200,17 @@
             </ul>
         </div>
         <div class="footer-section right">
-            <h3>Stay in Touch</h4>
+            <h2>Stay in Touch</h4>
             <div class="social-icons">
-                <a href="https://www.instagram.com/maconmetalworks/"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/MaconMetalWorks/"><i class="fab fa-facebook"></i></a>
-                <a href="mailto:ken@metallakemaps.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.instagram.com/maconmetalworks/"><img src="assets/ig.svg" alt="icon of instagram social media"></a>
+                <a href="https://www.facebook.com/MaconMetalWorks/"><img src="assets/fb.svg" alt="icong of facebook social media"></a>
+                <a href="mailto:ken@metallakemaps.com"><img src="assets/mail.svg" alt="icon of an envelop"></a>
             </div>
+            <!-- SUBSCRIBE BUTTON
             <div class="subscription-form">
                 <input type="email" placeholder="Enter your email">
                 <button type="submit">Subscribe</button>
-            </div>
+            </div> -->
         </div>
         <div class="footer-bottom">
             <hr>
@@ -229,5 +256,25 @@
         });
     });
 </script>
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const isMobile = window.innerWidth <= 768; // Define the breakpoint for mobile
+        
+        if (isMobile) {
+            // Initialize Swiper only on mobile
+            const swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1, // Only show one review per swipe
+                spaceBetween: 30, // Space between slides
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        }
+    });
+</script>
+<script src="reviews.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
