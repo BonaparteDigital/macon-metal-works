@@ -582,6 +582,11 @@ html {
     width: 60px;
 }
 
+.captcha {
+    justify-content: center;
+    align-items: center;
+}
+
 /* Footer */
 .footer {
     background-color: #002855; /* Dark blue background */
