@@ -717,6 +717,59 @@ html {
     text-decoration: underline;
 }
 
+/* Privacy Policy Styling*/
+
+.privacy-policy {
+    padding: 20px 10px; /* Padding for mobile */
+    line-height: 1.6; /* Improve readability */
+    color: #333; /* Text color */
+    background-color: #fff; /* Background color for better readability */
+    border-radius: 8px; /* Rounded corners for a clean look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.privacy-policy h1 {
+    font-size: 50px; /* Smaller font size for mobile */
+    font-family: "Cabin", sans-serif; /* Heading font */
+    color: #082B60; /* Dark blue for headings */
+    text-align: center; /* Center the main heading */
+    margin-bottom: 20px; /* Margin between heading and content */
+}
+
+.privacy-policy h2 {
+    font-size: 20px; /* Subheading font size */
+    font-family: "Cabin", sans-serif;
+    color: #002855; /* Dark blue for subheadings */
+    margin-top: 10px; /* Margin before subheading */
+    margin-bottom: 15px; /* Margin after subheading */
+}
+
+.privacy-policy p {
+    font-size: 14px; /* Smaller text for mobile */
+    font-family: "Lato", sans-serif;
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+.privacy-policy ul {
+    list-style-type: disc; /* Bullets for lists */
+    padding-left: 20px; /* Indent list items */
+    margin-bottom: 15px; /* Margin below lists */
+}
+
+.privacy-policy ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.privacy-policy a {
+    color: #4A85E2; /* Link color */
+    text-decoration: underline; /* Underline links */
+}
+
+.privacy-policy a:hover {
+    color: #002855; /* Darken link color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
 /* Responsive Styles */
 
 /* Tablet View */
@@ -735,6 +788,22 @@ html {
 
     .swiper-container {
         display: none;
+    }
+
+    .privacy-policy {
+        padding: 30px 20px; /* Increase padding for larger screens */
+    }
+
+    .privacy-policy h1 {
+        font-size: 50px; /* Larger heading for tablet/desktop */
+    }
+
+    .privacy-policy h2 {
+        font-size: 24px; /* Larger subheading for tablet/desktop */
+    }
+
+    .privacy-policy p {
+        font-size: 16px; /* Larger text for better readability on larger screens */
     }
 }
 
@@ -969,6 +1038,25 @@ html {
     
     .footer-section.right .social-icons a {
         margin: 0 5px; /* Control the spacing between the icons */
+    }
+
+    .privacy-policy {
+        max-width: 1200px; /* Limit the width on large screens */
+        margin: 0 auto; /* Center content on desktop */
+        padding: 40px 30px; /* More padding for desktop */
+    }
+
+    .privacy-policy h1 {
+        margin-bottom: 50px; /* Increase margin below the main heading */
+    }
+
+    .privacy-policy h2 {
+        margin-top: 20px; /* Space above subheadings */
+        margin-bottom: 10px; /* Space below subheadings */
+    }
+
+    .privacy-policy p {
+        margin-bottom: 20px; /* Space between paragraphs */
     }
     
 }
