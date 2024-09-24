@@ -82,12 +82,11 @@ window.onload = async function() {
     const isMobile = window.innerWidth <= 768;
     if (isMobile) {
         const swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1, // Only show one review per swipe
-            spaceBetween: 70, // Space between slides
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+            slidesPerView: 1, // Show one review per swipe
+            centeredSlides: true, // Center each slide in the viewport
+            spaceBetween: 20, // Add space between slides
+            loop: false, // Disable looping
+            grabCursor: true, // Change the cursor to indicate swipe functionality
         });
     }
 };
