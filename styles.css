@@ -101,7 +101,7 @@ html {
 }
 
 .logo-header img {
-    max-width: 300px;
+    max-width: 250px;
     height: auto;
     z-index: 999;
 }
@@ -582,11 +582,6 @@ html {
     width: 60px;
 }
 
-.captcha {
-    justify-content: center;
-    align-items: center;
-}
-
 /* Footer */
 .footer {
     background-color: #002855; /* Dark blue background */
@@ -964,4 +959,16 @@ html {
     .footer-content {
         max-width: 30%;
     } 
+
+    .footer-section.right .social-icons {
+        display: flex;
+        justify-content: center; /* Center the icons */
+        gap: 8px; /* Adjust the gap between the icons */
+        padding: 0; /* Remove extra padding */
+    }
+    
+    .footer-section.right .social-icons a {
+        margin: 0 5px; /* Control the spacing between the icons */
+    }
+    
 }
