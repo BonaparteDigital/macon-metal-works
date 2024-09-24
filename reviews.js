@@ -84,7 +84,7 @@ window.onload = async function() {
         const swiper = new Swiper('.swiper-container', {
             slidesPerView: 1, // Show one review per swipe
             centeredSlides: true, // Center each slide in the viewport
-            spaceBetween: 20, // Add space between slides
+            spaceBetween: 40, // Add space between slides
             loop: false, // Disable looping
             grabCursor: true, // Change the cursor to indicate swipe functionality
         });
