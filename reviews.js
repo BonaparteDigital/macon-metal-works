@@ -10,7 +10,7 @@ function shuffleArray(array) {
 async function fetchReviews() {
     const app_key = 'kPuRbw6Uo4fVEVNUktRkNhHJj7NfsWERvDxDNnq4'; // Yotpo app key
     const utoken = 'xN8Bn1iFUlZIdHfUD00hxFJZ8BLXH1DKXevLl5m2';  // The correct API token
-    const url = `https://api.yotpo.com/v1/apps/${app_key}/reviews?utoken=${utoken}&count=4`; // Fetch more to randomize
+    const url = `https://api.yotpo.com/v1/apps/${app_key}/reviews?utoken=${utoken}&count=20`; // Fetch more reviews
 
     try {
         const response = await fetch(url, {
@@ -20,7 +20,8 @@ async function fetchReviews() {
             },
         });
         const data = await response.json();
-        return shuffleArray(data.reviews); // Return shuffled array of reviews
+        const shuffledReviews = shuffleArray(data.reviews); // Shuffle the reviews array
+        return shuffledReviews.slice(0, 4); // Return only 4 reviews for display
     } catch (error) {
         console.error('Error fetching reviews:', error);
         return [];
