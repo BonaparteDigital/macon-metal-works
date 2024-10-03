@@ -774,7 +774,7 @@ html {
 
 /* Tablet View */
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1199px) {
     .testimonials-section {
         height: 900px;
     }
@@ -809,7 +809,7 @@ html {
 
 /* Desktop View */
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
     .desktop-nav {
         display: block;
     }
@@ -901,7 +901,6 @@ html {
     
     .content-section {
         grid-template-columns: 1.5fr 2fr; /* Two columns: image + content */
-
     }
 
     .content-img {
