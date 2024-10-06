@@ -16,6 +16,7 @@
     <meta name="description" content="Expert metal fabrication in Macon, GA. Custom designs, CNC welding, AutoCAD, and more. Quality, American-made products with satisfaction guaranteed">
     <meta name="keywords" content="custom artwork, metal designs, metal lake maps, custom lake maps, custom designs">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="assets/hero-image_mobile.webp">
     <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,7 +86,8 @@
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QBFG2RW"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- Header -->
     <header class="header">
@@ -130,9 +132,8 @@
     <section class="hero">
         <picture>
             <source media="(min-width: 768px)" srcset="assets/hero-image.webp">
-            <img src="assets/hero-image_mobile.webp" alt="Lake Keowee Metal Artwork" class="hero-image">
+            <img src="assets/hero-image_mobile.webp" alt="Lake Keowee Metal Artwork" class="hero-image" width="800" height="1200">
         </picture>
-        <img src="assets/hero-image.webp" alt="Lake Keowee Metal Artwork" class="hero-image">
         <div class="hero-content">
             <h1>Expert</br>Metal</br>Fabrication</h1>
             <a href="https://customlakemaps.com/pages/interactive-map"><button class="cta-btn">Shop Now</button></a>
@@ -223,7 +224,7 @@
             <div class="get-quote">
                 <h2>Get a Free Quote</h2>
                 <p>Send us your ideas and we will follow up promptly!</p>
-                <form name="get-a-quote" method="POST" autocomplete="off" enctype="multipart/form-data" data-netlify="true">
+                <form id="quote-form" name="get-a-quote" method="POST" autocomplete="off" enctype="multipart/form-data" data-netlify="true">
                     <input name="name" type="text" placeholder="Your Name">
                     <input name="email" type="email" placeholder="Your Email">
                     <input name="phone" type="text" placeholder="Your Phone Number">
@@ -276,11 +277,11 @@
             <p>&copy; <script>document.write(new Date().getFullYear())</script> Macon Metal Works | All Rights Reserved | <a href="/privacy-policy">Privacy Policy</a></p>
         </div>
     </footer>
-<script>
+    <script>
         function onSubmit(token) {
-            document.querySelector('form[name="get-a-quote"]').submit();
+            document.getElementById("quote-form").submit();
         }
-</script>
+    </script>
 <!-- Menu Mobile Open -->
 <script>
     const menuBtn = document.querySelector('.menu-btn');
