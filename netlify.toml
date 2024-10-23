@@ -1,0 +1,10 @@
+[build]
+  publish = "public"  # Change to the directory where your site is built
+
+[build.environment]
+  HUGO_ENABLEGITINFO = "true"  # If you are using Hugo, you can skip this if not relevant
+
+[[redirects]]
+  from = "/*"
+  to = "/:splat"
+  status = 200
